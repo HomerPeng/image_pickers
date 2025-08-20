@@ -46,7 +46,6 @@ class ImagePickers {
     int videoRecordMinSecond = 1,
     Language language = Language.system,
   }) async {
-
     bool enableCrop = false;
     int width = -1;
     int height = -1;
@@ -62,9 +61,9 @@ class ImagePickers {
       'showGif': true,
       'uiColor': {
         "a": 255,
-        "r": uiColor.r,
-        "g": uiColor.g,
-        "b": uiColor.b,
+        "r": uiColor.red,
+        "g": uiColor.green,
+        "b": uiColor.blue,
         "l": (uiColor.computeLuminance() * 255).toInt()
       },
       'selectCount': 1,
@@ -85,9 +84,9 @@ class ImagePickers {
       Media media = Media();
       media.thumbPath = paths[0]["thumbPath"];
       media.path = paths[0]["path"];
-      if(cameraMimeType == CameraMimeType.photo){
+      if (cameraMimeType == CameraMimeType.photo) {
         media.galleryMode = GalleryMode.image;
-      }else{
+      } else {
         media.galleryMode = GalleryMode.video;
       }
       return media;
@@ -155,9 +154,9 @@ class ImagePickers {
       'showGif': showGif,
       'uiColor': {
         "a": 255,
-        "r": uiColor.r,
-        "g": uiColor.g,
-        "b": uiColor.b,
+        "r": uiColor.red,
+        "g": uiColor.green,
+        "b": uiColor.blue,
         "l": (uiColor.computeLuminance() * 255).toInt()
       },
       'selectCount': selectCount,
@@ -179,9 +178,9 @@ class ImagePickers {
       Media media = Media();
       media.thumbPath = data["thumbPath"];
       media.path = data["path"];
-      if(media.path == media.thumbPath){
+      if (media.path == media.thumbPath) {
         media.galleryMode = GalleryMode.image;
-      }else{
+      } else {
         media.galleryMode = GalleryMode.video;
       }
       medias.add(media);
